@@ -10,19 +10,17 @@ const noteSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "groups",
     },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-    },
   },
   {
     _id: "id",
+    timestamps: true,
+    versionKey: false,
   }
 );
 
 noteSchema.set("toJSON", {
   transform: (doc, ret) => {
-    delete ret.__v;
+    ret.edited = ret.createdAt !== ret.updatedAt;
     return ret;
   },
 });

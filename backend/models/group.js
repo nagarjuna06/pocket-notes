@@ -13,12 +13,14 @@ const groupSchema = new Schema(
   },
   {
     _id: "id",
+    versionKey: false,
+    timestamps: true,
   }
 );
 
 groupSchema.set("toJSON", {
   transform: (doc, ret) => {
-    delete ret.__v;
+    ret.profile = ret.title.chartAt(0).toUpperCase();
     return ret;
   },
 });
