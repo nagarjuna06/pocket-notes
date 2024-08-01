@@ -1,4 +1,4 @@
-import { models, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const noteSchema = new Schema(
   {
@@ -12,7 +12,6 @@ const noteSchema = new Schema(
     },
   },
   {
-    _id: "id",
     timestamps: true,
     versionKey: false,
   }
@@ -20,11 +19,13 @@ const noteSchema = new Schema(
 
 noteSchema.set("toJSON", {
   transform: (doc, ret) => {
-    ret.edited = ret.createdAt !== ret.updatedAt;
-    return ret;
+    const edited = ret.createdAt.getTime() !== ret.updatedAt.getTime();
+    const id = ret._id;
+    delete ret._id;
+    return { id, edited, ...ret };
   },
 });
 
-const noteModel = models("notes", noteSchema);
+const noteModel = model("notes", noteSchema);
 
 export default noteModel;

@@ -3,7 +3,9 @@ import noteModel from "../models/notes.js";
 export const createNote = async (req, res) => {
   try {
     const newNote = await noteModel.create(req.body);
-    return res.status(201).json(newNote);
+    return res
+      .status(201)
+      .json({ message: "note created successfully", data: newNote });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -19,7 +21,10 @@ export const updateNote = async (req, res) => {
     if (!updatedNote) {
       return res.status(404).json({ message: "Note not found" });
     }
-    return res.json(updatedNote);
+    return res.json({
+      message: "Note updated successfully",
+      data: updatedNote,
+    });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
@@ -31,7 +36,7 @@ export const deleteNote = async (req, res) => {
     if (!deletedNote) {
       return res.status(404).json({ message: "Note not found" });
     }
-    return res.json({ message: "Note deleted", id: deletedNote.id });
+    return res.json({ message: "Note deleted", data: { id: deletedNote.id } });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }

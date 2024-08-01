@@ -1,4 +1,4 @@
-import { models, Schema } from "mongoose";
+import { model, Schema } from "mongoose";
 
 const groupSchema = new Schema(
   {
@@ -12,19 +12,20 @@ const groupSchema = new Schema(
     },
   },
   {
-    _id: "id",
     versionKey: false,
     timestamps: true,
   }
 );
 
 groupSchema.set("toJSON", {
-  transform: (doc, ret) => {
-    ret.profile = ret.title.chartAt(0).toUpperCase();
-    return ret;
+  transform: (_, ret) => {
+    const id = ret._id;
+    const profile = ret.title.charAt(0).toUpperCase();
+    delete ret._id;
+    return { id, profile, ...ret };
   },
 });
 
-const groupModel = models("groups", groupSchema);
+const groupModel = model("groups", groupSchema);
 
 export default groupModel;

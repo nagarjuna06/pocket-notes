@@ -3,7 +3,10 @@ import groupModel from "../models/group.js";
 export const createGroup = async (req, res) => {
   try {
     const newGroup = await groupModel.create(req.body);
-    return res.status(201).json(newGroup);
+    return res.status(201).json({
+      message: "Group created successfully",
+      data: newGroup,
+    });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
