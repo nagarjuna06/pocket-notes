@@ -1,0 +1,11 @@
+.app__name {
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 434px;
+  height: 100vh;
+}
