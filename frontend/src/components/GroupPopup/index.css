@@ -13,7 +13,7 @@
 }
 
 .group__popup {
-  width: 400px;
+  width: 500px;
   height: auto;
   background-color: white;
   border-radius: 10px;
@@ -60,7 +60,9 @@
 }
 
 .group__popup__form > .form__button__container {
-  text-align: right;
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
 }
 
 .group__popup__form .form__button {
@@ -71,4 +73,30 @@
   border-radius: 10px;
   cursor: pointer;
   font-size: var(--text-md);
+}
+
+@media (max-width: 768px) {
+  .group__popup__form > .input > h3 {
+    font-size: 14px;
+  }
+  .group__popup__form {
+    gap: 10px;
+  }
+  .group__popup {
+    width: 280px;
+  }
+  .group__popup__form > .form__button__container {
+    justify-content: center;
+  }
+  .color__input {
+    width: 20px;
+    height: 20px;
+  }
+  .group__popup__form input {
+    padding: 5px;
+    font-size: var(--text-sm);
+  }
+  .group__popup__form .form__button {
+    font-size: var(--text-sm);
+  }
 }

@@ -73,6 +73,7 @@ const NotesProvider = ({ children }) => {
     const res = await createNoteApi({ ...note, groupId });
     if (res.data) {
       setNotes((prev) => [...prev, res.data]);
+      setNote({ content: "" });
     }
   };
 
@@ -87,6 +88,7 @@ const NotesProvider = ({ children }) => {
       const index = notes.findIndex((n) => n.id === note.id);
       updatedNotes[index] = res.data;
       setNotes(updatedNotes);
+      setNote({ content: "" });
     }
   };
   const deleteNote = async (id) => {
@@ -96,6 +98,10 @@ const NotesProvider = ({ children }) => {
       setNotes(updatedNotes);
     }
   };
+
+  useEffect(() => {
+    setNote({ content: "" });
+  }, [groupId]);
 
   useEffect(() => {
     fetchNotes();

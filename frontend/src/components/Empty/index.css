@@ -1,0 +1,12 @@
+.empty__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.empty__content > img {
+  max-width: 200px;
+  aspect-ratio: 1;
+}

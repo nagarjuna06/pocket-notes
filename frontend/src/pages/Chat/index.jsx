@@ -5,6 +5,7 @@ import Profile from "../../components/ChatCard/Profile";
 import Icon from "../../components/Icon";
 import "./index.css";
 import Note from "../../components/Chat/Note";
+import Empty from "../../components/Empty";
 const Chat = () => {
   const { group, notes } = usePocketNotes();
   if (!group) return;
@@ -18,9 +19,11 @@ const Chat = () => {
         <h3>{group.title}</h3>
       </div>
       <div className="chat__area">
-        {notes.map((note) => (
-          <Note {...note} key={note.id} />
-        ))}
+        {notes.length ? (
+          notes.map((note) => <Note {...note} key={note.id} />)
+        ) : (
+          <Empty content="Empty Notes" />
+        )}
       </div>
       <ChatBox />
     </div>

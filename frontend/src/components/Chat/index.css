@@ -44,6 +44,7 @@
 .note__footer > span {
   font-weight: 500;
   color: #353535;
+  font-size: var(--text-sm);
 }
 
 .note__actions {

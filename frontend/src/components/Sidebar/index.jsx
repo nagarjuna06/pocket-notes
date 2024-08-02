@@ -3,6 +3,7 @@ import ChatCard from "../ChatCard";
 import "./index.css";
 import GroupPopup from "../GroupPopup";
 import { usePocketNotes } from "../../../context/notesContext";
+import Empty from "../Empty";
 
 const Sidebar = () => {
   const { groups, createGroup } = usePocketNotes();
@@ -11,14 +12,19 @@ const Sidebar = () => {
     <div className="sidebar" style={{ "--chat": groupId ? "none" : "block" }}>
       <div className="app__name">
         <Link to="/" className="app__name__link">
-          {import.meta.env.VITE_APP_NAME}
+          <img src="/logo.png" alt="logo" />
+          <h4>{import.meta.env.VITE_APP_NAME}</h4>
         </Link>
       </div>
-      <div className="sidebar__chat_cards">
-        {groups.map((each) => (
-          <ChatCard {...each} key={each.id} />
-        ))}
-      </div>
+      {groups.length ? (
+        <div className="sidebar__chat_cards">
+          {groups.map((each) => (
+            <ChatCard {...each} key={each.id} />
+          ))}
+        </div>
+      ) : (
+        <Empty />
+      )}
       <GroupPopup sendToApi={createGroup} />
     </div>
   );

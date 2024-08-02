@@ -3,7 +3,7 @@ import "./index.css";
 import Icon from "../Icon";
 import { usePocketNotes } from "../../../context/notesContext";
 
-const Note = ({ content, createdAt, edited, id }) => {
+const Note = ({ content, updatedAt, edited, id }) => {
   const { setNote, deleteNote } = usePocketNotes();
   return (
     <div className="note">
@@ -16,12 +16,12 @@ const Note = ({ content, createdAt, edited, id }) => {
           <Icon name="pencil" size={15} />
         </button>
         <button onClick={() => deleteNote(id)} className="note__actions">
-          <Icon name="trash" size={15} />
+          <Icon name="trash" size={15} color="red" />
         </button>
         <span>{edited && "Edited"}</span>
-        <span>{formatDate(createdAt, "dd MMMM yyyy")}</span>
+        <span>{formatDate(updatedAt, "dd MMMM yyyy")}</span>
         <Icon name="ellipse" size={6} color="#353535" />
-        <span>{formatDate(createdAt, "hh:mm a")}</span>
+        <span>{formatDate(updatedAt, "hh:mm a")}</span>
       </div>
     </div>
   );

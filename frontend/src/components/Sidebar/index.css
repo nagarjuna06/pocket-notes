@@ -8,6 +8,15 @@
   color: #000;
   font-size: var(--text-xl);
   font-weight: 600;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__name__link > img {
+  width: 40px;
+  aspect-ratio: 1;
 }
 
 .sidebar {
