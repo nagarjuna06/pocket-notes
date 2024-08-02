@@ -17,7 +17,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
-  display: block;
+  display: none;
 }
 
 .chat__area {
@@ -33,6 +33,6 @@
 
 @media (max-width: 768px) {
   .chat__header__back_link {
-    display: none;
+    display: block;
   }
 }
