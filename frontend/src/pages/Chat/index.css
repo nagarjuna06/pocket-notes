@@ -17,6 +17,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: block;
 }
 
 .chat__area {
@@ -28,4 +29,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .chat__header__back_link {
+    display: none;
+  }
 }
