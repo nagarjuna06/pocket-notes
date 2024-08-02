@@ -1,4 +1,5 @@
 import noteModel from "../models/notes.js";
+import groupModel from "../models/group.js";
 
 export const createNote = async (req, res) => {
   try {
@@ -44,10 +45,14 @@ export const deleteNote = async (req, res) => {
 
 export const getNotes = async (req, res) => {
   try {
+    const group = await groupModel.findOne({ _id: req.params.groupId });
+    if (!group) {
+      return res.status(404).json({ message: "Group not found" });
+    }
     const notes = await noteModel
       .find({ groupId: req.params.groupId })
       .sort({ createdAt: 1 });
-    return res.json(notes);
+    return res.json({ ...group, notes });
   } catch (error) {
     return res.status(500).json({ message: error.message });
   }
