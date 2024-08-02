@@ -1,9 +1,8 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./index.css";
 const ChatCard = ({ profile, color, title, id }) => {
-  const router = useNavigate();
   return (
-    <div className="chat__card" onClick={() => router(`/${id}`)}>
+    <Link to={`/${id}`} className="chat__card">
       <div
         className="chat__card__profile"
         style={{ "--chat-profile-color": color }}
@@ -11,7 +10,7 @@ const ChatCard = ({ profile, color, title, id }) => {
         {profile}T
       </div>
       <p className="chat__card__title">{title}</p>
-    </div>
+    </Link>
   );
 };
 

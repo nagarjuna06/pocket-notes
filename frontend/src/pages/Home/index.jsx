@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import SideBar from "../components/Sidebar";
-
+import Sidebar from "../../components/Sidebar";
+import "./index.css";
 const Home = () => {
   return (
-    <div>
-      <SideBar />
+    <div className="home">
+      <Sidebar />
       <Outlet />
     </div>
   );

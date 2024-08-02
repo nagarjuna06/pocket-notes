@@ -1,9 +1,13 @@
 .chat__card {
-  padding: 10px 20px;
+  padding: 10px 40px;
   display: flex;
   gap: 25px;
   align-items: center;
   width: 100%;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  color: black;
 }
 
 .chat__card__selected {
@@ -12,8 +16,8 @@
 }
 
 .chat__card__profile {
-  width: 68px;
-  height: 68px;
+  width: var(--profile-size);
+  height: var(--profile-size);
   background-color: var(--chat-profile-color);
   display: flex;
   justify-content: center;
@@ -21,9 +25,9 @@
   border-radius: 50%;
   font-weight: 500;
   color: white;
-  font-size: 24px;
+  font-size: var(--text-lg);
 }
 .chat__card__title {
   font-weight: 600;
-  font-size: 24px;
+  font-size: var(--text-lg);
 }

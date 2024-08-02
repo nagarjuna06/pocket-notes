@@ -2,4 +2,14 @@
 
 * {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --profile-size: 60px;
+  /* text sizes */
+  --text-xl: 30px;
+  --text-lg: 20px;
+  --text-md: 18px;
 }
