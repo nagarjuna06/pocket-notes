@@ -26,7 +26,11 @@ const ChatBox = () => {
         }
       />
       <button type="submit" className="send__button" disabled={!note.content}>
-        <Icon name="enter" size={25} color={note ? "#001F8B" : "#ABABAB"} />
+        <Icon
+          name="enter"
+          size={25}
+          color={note.content ? "#001F8B" : "#ABABAB"}
+        />
       </button>
     </form>
   );
