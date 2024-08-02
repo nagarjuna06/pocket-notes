@@ -1,18 +1,18 @@
 import routes from "./api-routes";
 import axios from "./axios";
 
-export const getNotes = () => {
-  return axios.get(routes.get_notes);
+export const getNotesApi = (groupId) => {
+  return axios.get(routes.get_notes(groupId));
 };
 
-export const createNote = (data) => {
+export const createNoteApi = (data) => {
   return axios.post(routes.create_note, data);
 };
 
-export const updateNote = (id, data) => {
-  return axios.put(routes.update_note(id), data);
+export const updateNoteApi = (noteId, data) => {
+  return axios.put(routes.update_note(noteId), data);
 };
 
-export const deleteNote = (id) => {
-  return axios.delete(routes.delete_note(id));
+export const deleteNoteApi = (noteId) => {
+  return axios.delete(routes.delete_note(noteId));
 };

@@ -3,16 +3,19 @@
   display: flex;
   gap: 25px;
   align-items: center;
-  width: 100%;
   background-color: transparent;
   border: none;
   text-decoration: none;
   color: black;
 }
+.chat__card:hover {
+  background: rgba(47, 47, 47, 0.17);
+  border-radius: 25px;
+}
 
 .chat__card__selected {
   background: rgba(47, 47, 47, 0.17);
-  border-radius: 16px;
+  border-radius: 25px;
 }
 
 .chat__card__profile {

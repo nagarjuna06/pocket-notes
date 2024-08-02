@@ -5,9 +5,9 @@ const routes = {
 
   // notes api routes
   create_note: "/note",
-  get_notes: "/note/all",
-  update_note: (id) => `/note/${id}`,
-  delete_note: (id) => `/note/${id}`,
+  get_notes: (groupId) => `/note/${groupId}/all`,
+  update_note: (noteId) => `/note/${noteId}`,
+  delete_note: (noteId) => `/note/${noteId}`,
 };
 
 export default routes;

@@ -20,9 +20,12 @@ const groupSchema = new Schema(
 groupSchema.set("toJSON", {
   transform: (_, ret) => {
     const id = ret._id;
-    const profile = ret.title.charAt(0).toUpperCase();
+    const profile = ret.title
+      .split(" ")
+      .map((each) => each.charAt(0).toUpperCase())
+      .join("");
     delete ret._id;
-    return { id, profile, ...ret };
+    return { id, profile: profile.slice(0, 2), ...ret };
   },
 });
 

@@ -1,6 +1,4 @@
 .hero__section {
-  /* height: 100vh; */
-  width: 100;
   flex-grow: 1;
   background-color: #dae5f5;
   display: flex;

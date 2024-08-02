@@ -14,8 +14,122 @@ const LockIcon = () => {
   );
 };
 
+const PluseIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="4.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-plus"
+    >
+      <path d="M5 12h14" />
+      <path d="M12 5v14" />
+    </svg>
+  );
+};
+const EnterIcon = () => {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 21 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 17.6842V11.0526L8.8421 8.84211L0 6.63158V0L21 8.84211L0 17.6842Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+const LeftArrowIcon = () => {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 16 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.27501 10.85C6.47501 10.65 6.57101 10.4083 6.56301 10.125C6.55501 9.84167 6.45068 9.6 6.25001 9.4L3.42501 6.575H14.575C14.8583 6.575 15.096 6.479 15.288 6.287C15.48 6.095 15.5757 5.85767 15.575 5.575C15.575 5.29167 15.479 5.054 15.287 4.862C15.095 4.67 14.8577 4.57433 14.575 4.575H3.42501L6.27501 1.725C6.47501 1.525 6.57501 1.28733 6.57501 1.012C6.57501 0.736666 6.47501 0.499333 6.27501 0.3C6.07501 0.0999997 5.83734 0 5.56201 0C5.28668 0 5.04934 0.0999997 4.85001 0.3L0.275009 4.875C0.175009 4.975 0.104008 5.08333 0.0620079 5.2C0.0200081 5.31667 -0.000658989 5.44167 7.62939e-06 5.575C7.62939e-06 5.70833 0.0210094 5.83333 0.0630093 5.95C0.105009 6.06667 0.175675 6.175 0.275009 6.275L4.87501 10.875C5.05834 11.0583 5.28734 11.15 5.56201 11.15C5.83668 11.15 6.07434 11.05 6.27501 10.85Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+};
+
+const EllipseIcon = () => {
+  return (
+    <svg
+      width="100%"
+      height="100%"
+      viewBox="0 0 8 8"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="4" cy="4" r="4" fill="#353535" />
+    </svg>
+  );
+};
+
+const PencilIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+      <path d="m15 5 4 4" />
+    </svg>
+  );
+};
+
+const TrashIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 6h18" />
+      <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
+      <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" />
+      <line x1="10" x2="10" y1="11" y2="17" />
+      <line x1="14" x2="14" y1="11" y2="17" />
+    </svg>
+  );
+};
+
 const icons = {
   lock: LockIcon,
+  pluse: PluseIcon,
+  enter: EnterIcon,
+  "left-arrow": LeftArrowIcon,
+  ellipse: EllipseIcon,
+  pencil: PencilIcon,
+  trash: TrashIcon,
 };
 
 const Icon = ({ name, size = 20, color = "#000" }) => {

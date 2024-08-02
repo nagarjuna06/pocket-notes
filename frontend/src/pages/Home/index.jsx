@@ -1,12 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import "./index.css";
+import NotesProvider from "../../../context/notesContext";
 const Home = () => {
   return (
-    <div className="home">
-      <Sidebar />
-      <Outlet />
-    </div>
+    <NotesProvider>
+      <div className="home">
+        <Sidebar />
+        <Outlet />
+      </div>
+    </NotesProvider>
   );
 };
 
